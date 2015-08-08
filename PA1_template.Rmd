@@ -313,7 +313,11 @@ main = "New Histogram with NA Data Filled")
 
 ![](http://i.imgur.com/KEaHaKO.png)
 
-- Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+- Do these values differ from the estimates from the first part of the assignment?
+
+No, the mean of total values do not appear to differ from estimates in the first part of the assignment.
+
+What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
 - **Calculate** and **report** the mean total number of steps taken per day. 
 
@@ -333,14 +337,15 @@ print(median(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
 
 ### Are there differences in activity patterns between weekdays and weekends?
 
-- No, the mean of total values do not differ the from the estimates from the first part of the assignment.
+- Yes, there are differences in activity patterns between weekdays and 
+weekends.
 
 ### What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-- The original averages for each day that appeared from an exploratory standpoint that NA remain unchanged.
+- The original averages for each day from an exploratory standpoint appeared to show that NA remain unchanged.
 - The overall values may show to be slightly higher with a more rigid and more sophisticated strategy however from a cursory look through the 
 .csv file.
-- A quick exploratory analysis of plotting the days (many plots not included in this document) showed the imputed days that were missing tended to be Wednesdays, and Thursday through Friday of the week.
+- A quick exploratory analysis of plotting the days (many plots not included in this document) showed the imputed days that were missing tended to be Wednesday through Friday of the week.
 - These days appear to have some increased steps activity.
 
 - **Create** a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
