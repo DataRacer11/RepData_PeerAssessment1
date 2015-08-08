@@ -337,11 +337,11 @@ print(median(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
 
 ### What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-- The original averages for each day that did not show as NA remain unchanged.
-- The overall values may show to be slightly higher with a more rigid and more sophisticated strategy however as a cursory look though the 
+- The original averages for each day that appeared from an exploratory standpoint that NA remain unchanged.
+- The overall values may show to be slightly higher with a more rigid and more sophisticated strategy however from a cursory look through the 
 .csv file.
 - A quick exploratory analysis of plotting the days (many plots not included in this document) showed the imputed days that were missing tended to be Wednesdays, and Thursday through Friday of the week.
-- These days appear to have increased steps activity.
+- These days appear to have some increased steps activity.
 
 - **Create** a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
@@ -435,29 +435,3 @@ A valid submission will look something like (this is just an **example**! (See [
 [SHA-1 hash:](https://github.com/rdpeng/RepData_PeerAssessment1/commits/master)
 7c376cc5447f11537f8740af8e07d6facc3d9645
 
-=======
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
-
-
-## Loading and preprocessing the data
-
-
-
-## What is mean total number of steps taken per day?
-
-
-
-## What is the average daily activity pattern?
-
-
-
-## Imputing missing values
-
-
-
-## Are there differences in activity patterns between weekdays and weekends?
->>>>>>> 79f6809366a01db33783c0858cefe47c50d4de38
