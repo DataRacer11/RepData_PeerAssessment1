@@ -13,8 +13,8 @@ output: html_document
 
 **Course Student: [DataRacer11](https://github.com/DataRacer11/RepData_PeerAssessment1)**  
 
-*  ***This Assignment with Code begins at:**
-**Loading and pre-processing the data section***
+*  **This Assignment with Code begins at:**
+Loading and pre-processing the data section
 
 **File Name:** RepData.R (contains all plotting code for all 3 questions in one .R file).
 
