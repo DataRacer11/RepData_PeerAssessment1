@@ -231,7 +231,7 @@ print(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
 
 **`##[1] 206.1698`**
 
-- Therefore, on an average day this subject took the most steps (206 steps each interval) between 8:35AM and 8:50AM.
+- Therefore, on an average day this subject took the most steps (206) between 8:35AM and 8:50AM.
 
 ```
 plotRange <- 1:length(Avg_Daily_Activity) plot(as.integer(plotRange), 
