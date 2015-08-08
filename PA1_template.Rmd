@@ -313,7 +313,7 @@ main = "New Histogram with NA Data Filled")
 
 ![](http://i.imgur.com/KEaHaKO.png)
 
-- Do these values differ from the estimates from the first part of the assignment?
+Do these values differ from the estimates from the first part of the assignment?
 
 - No, the mean of total values do not appear to differ from estimates 
   in the first part of the assignment.
