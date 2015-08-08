@@ -120,7 +120,7 @@ library(lubridate)
 
 - **Dataset:** Activity monitoring data [52K]* (see above link and on [GitHub](https://github.com/rdpeng/RepData_PeerAssessment1))
 - **Download file:** https://d396qusza40orc.cloudfront.net/repdata%2Fdata 2Factivity.zip (see above link and on [GitHub](https://github.com/rdpeng/RepData_PeerAssessment1))
-- **Unzip the file: (i.e. unzip("repdata-data-activity.zip")**
+- **Unzip the file: i.e. unzip ("repdata-data-activity.zip")**
 
 ```
 data = read.csv("activity.csv", header = TRUE)
