@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PA1_template"
 author: "DataRacer11"
 date: "August 7, 2015"
@@ -434,3 +435,29 @@ A valid submission will look something like (this is just an **example**! (See [
 [SHA-1 hash:](https://github.com/rdpeng/RepData_PeerAssessment1/commits/master)
 7c376cc5447f11537f8740af8e07d6facc3d9645
 
+=======
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
+
+
+## Loading and preprocessing the data
+
+
+
+## What is mean total number of steps taken per day?
+
+
+
+## What is the average daily activity pattern?
+
+
+
+## Imputing missing values
+
+
+
+## Are there differences in activity patterns between weekdays and weekends?
+>>>>>>> 79f6809366a01db33783c0858cefe47c50d4de38
