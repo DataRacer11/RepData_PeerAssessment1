@@ -115,7 +115,7 @@ assignment so you do not have to download the data separately.
 - **In RStudio the install ``lubridate`` library**
 
 ```
-library(lubridate)
+                library(lubridate)
 ```
 
 - **Dataset:** Activity monitoring data [52K]* (see above link and on [GitHub](https://github.com/rdpeng/RepData_PeerAssessment1))
@@ -123,11 +123,11 @@ library(lubridate)
 - **Unzip the file: i.e. unzip ("repdata-data-activity.zip")**
 
 ```
-data = read.csv("activity.csv", header = TRUE)
+                data = read.csv("activity.csv", header = TRUE)
 ```
 
 ```
-str(data)
+                str(data)
 ```
 
 #### Observe the Data: 
@@ -141,7 +141,7 @@ str(data)
 objects of class "Date" representing calendar dates.
 
 ```
-data$date<-as.Date(data$date)
+                data$date<-as.Date(data$date)
 ```
 
 - Date-time must be a POSIXct, POSIXlt, Date, chron, yearmon, yearqtr, zoo, zooreg, timeDate, xts, its, ti, jul, timeSeries, and fts objects.
@@ -149,7 +149,7 @@ data$date<-as.Date(data$date)
 
 
 ```
-data$Weekday<-wday(data$date, label = TRUE, abbr = FALSE)
+                data$Weekday<-wday(data$date, label = TRUE, abbr = FALSE)
 ```
 
 - **Divide** data into Groups and Reassemble. `Split` divides the data in the vector x into the groups. The replacement forms replace values corresponding to such a division. 
@@ -163,13 +163,13 @@ Steps_Each_Day = sapply(split(data$steps, data$date), sum)
 #### Observe the Data: 
     
 ```
-head(data)
+                head(data)
 ```
 
 ![](http://i.imgur.com/kk1Ha5o.png)
 
 ```
-tail(data)
+                tail(data)
 ```
 
 ![](http://i.imgur.com/eNCBlwh.png)
@@ -180,7 +180,7 @@ tail(data)
 - **Make a histogram** of the total number of steps taken each day
 
 ```
-hist(Steps_Each_Day, col = "lightblue", main = "Total Number of Steps Each Day", ylim = c(0, 40))
+                hist(Steps_Each_Day, col = "lightblue", main = "Total Number of Steps Each Day", ylim = c(0, 40))
 ```
 
 ![](http://i.imgur.com/0Kx4kpq.png)                                                                      
@@ -189,7 +189,7 @@ hist(Steps_Each_Day, col = "lightblue", main = "Total Number of Steps Each Day",
 
 
 ```
-print(mean(Steps_Each_Day, na.rm = TRUE))
+                print(mean(Steps_Each_Day, na.rm = TRUE))
 ```
 
 **`##[1] 10766.19`**
@@ -198,7 +198,7 @@ print(mean(Steps_Each_Day, na.rm = TRUE))
 
 
 ```
-print(median(Steps_Each_Day, na.rm = TRUE))
+                print(median(Steps_Each_Day, na.rm = TRUE))
 ```
 
 **`##[1] 10765`**
@@ -208,13 +208,13 @@ print(median(Steps_Each_Day, na.rm = TRUE))
 - **Make a time series plot** (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
 ```
-Avg_Daily_Activity = sapply(split(data$steps, data$interval), mean, na.rm = TRUE)
+                Avg_Daily_Activity = sapply(split(data$steps, data$interval), mean, na.rm = TRUE)
 ```
 
 - Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```
-names(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
+                names(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
 ```
 
 - Interval with maximum number of mean steps. 
@@ -224,7 +224,7 @@ names(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
 - **Print** out the Interval with maximum number of mean steps and the max average number of steps per interval
 
 ```
-print(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
+                print(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
 ```
 
 **`##[1]      835`**
@@ -234,10 +234,12 @@ print(Avg_Daily_Activity)[Avg_Daily_Activity == max(Avg_Daily_Activity)]
 - Therefore, on an average day this subject took the most steps (206) between 8:35AM and 8:50AM.
 
 ```
-plotRange <- 1:length(Avg_Daily_Activity) plot(as.integer(plotRange), 
-Avg_Daily_Activity, type="l", main="Average Number of Steps Per Interval",
-xlab="Interval", col="blue", lty = 1, ylab="Number of Steps Each Interval",    
-xaxt="n") axis(1, at=plotRange, names(Avg_Daily_Activity))
+                plotRange <- 1:length(Avg_Daily_Activity) {
+                                plot(as.integer(plotRange), 
+                                Avg_Daily_Activity, type="l", main="Average Number of Steps Per Interval",
+                                xlab="Interval", col="blue", lty = 1, ylab="Number of Steps Each Interval",    
+                                xaxt="n") axis(1, at=plotRange, names(Avg_Daily_Activity))
+                }
 ```
 
 ![](http://i.imgur.com/d982xEx.png)
@@ -254,7 +256,7 @@ bias into some calculations or summaries of the data.
 - **Calculate** the total number of rows with NAs)
 
 ```
-sum(is.na(data$steps))
+                sum(is.na(data$steps))
 ```
 
 **`##[1] 2304`**
@@ -262,7 +264,7 @@ sum(is.na(data$steps))
 #### Observe the Data: 
 
 ```
-summary(data)
+                summary(data)
 ```
 
 ![](http://i.imgur.com/rDwP3f0.png)
@@ -272,7 +274,7 @@ summary(data)
 - **Subset** out all of the 2304 rows with an NA value
 
 ```
-NA_data <- subset(data, !complete.cases(data))
+                NA_data <- subset(data, !complete.cases(data))
 ```
 
 - **NOTE:** All of the NAs are contained in 8 days, which have all steps missing in each day
@@ -280,7 +282,7 @@ NA_data <- subset(data, !complete.cases(data))
 #### Observe the Data: 
 
 ```
-table(NA_data$date)
+                table(NA_data$date)
 ```
 
 ![](http://i.imgur.com/oEQY9He.png)
@@ -288,16 +290,16 @@ table(NA_data$date)
 - **Create** a new dataset that is equal to the original dataset but with the missing data filled in.
 
 ```
-fillData = data for (i in 1:nrow(fillData)){if (is.na(fillData[i, "steps"]))
-{interval = as.character(fillData[i, "interval"])
-fillData[i, "steps"] = Avg_Daily_Activity[interval] }
-}
+                fillData = data for (i in 1:nrow(fillData)){if (is.na(fillData[i, "steps"]))
+                                {interval = as.character(fillData[i, "interval"])
+                                fillData[i, "steps"] = Avg_Daily_Activity[interval] }
+                }
 ```
 
 - **Sum** the missing NA values which now show as replaced and filled with data.
 
 ```
-sum(is.na(fillData$steps))
+                sum(is.na(fillData$steps))
 ```
 
 **`##[1] 0`**
@@ -306,9 +308,9 @@ sum(is.na(fillData$steps))
 - **Calculate** and **report** the mean and median total number of steps taken per day. 
 
 ``` 
-Total_Number_Steps_NA_Filled_Per_Interval = sapply(split(fillData$steps, fillData$date), sum)
-hist(Total_Number_Steps_NA_Filled_Per_Interval, col = "green", ylim = c(0, 40), 
-main = "New Histogram with NA Data Filled")
+                Total_Number_Steps_NA_Filled_Per_Interval = sapply(split(fillData$steps, fillData$date), sum)
+                hist(Total_Number_Steps_NA_Filled_Per_Interval, col = "green", ylim = c(0, 40), 
+                main = "New Histogram with NA Data Filled")
 ```
 
 ![](http://i.imgur.com/KEaHaKO.png)
@@ -323,7 +325,7 @@ What is the impact of imputing missing data on the estimates of the total daily 
 - **Calculate** and **report** the mean total number of steps taken per day. 
 
 ```
-print(mean(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
+                print(mean(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
 ```
 
 **`##[1] 10766.19`**
@@ -331,7 +333,7 @@ print(mean(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
 - **Calculate** and **report** the median total number of steps taken per day.
 
 ```
-print(median(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
+                print(median(Total_Number_Steps_NA_Filled_Per_Interval, na.rm = TRUE))
 ```
 
 **`##[1] 10766.19`**
@@ -356,39 +358,39 @@ weekends as seen in the final plots included in this analysis.
 - **Use** the dataset with the filled-in missing values for this part.
 
 ```
-fillData$weekday = weekdays(as.Date(fillData$date, format = "%Y-%m-d"))
-fillData$weekday_type = factor(ifelse(fillData$weekday == "Sunday"
-| fillData$weekday == "Saturday", "weekend", "weekday"),
-levels = c("weekday", "weekend"))
+                fillData$weekday = weekdays(as.Date(fillData$date, format = "%Y-%m-d"))
+                fillData$weekday_type = factor(ifelse(fillData$weekday == "Sunday"
+|               fillData$weekday == "Saturday", "weekend", "weekday"),
+                levels = c("weekday", "weekend"))
 ```
 - **Calculate** the average number of steps per interval, group by weekday and by weekend day
 
 ```
-fillData_weekdays = fillData[fillData$weekday_type == "weekday",]
-fillData_weekend = fillData[fillData$weekday_type == "weekend",]
-avg_number_steps_interval_weekdays= sapply(split(fillData_weekdays$steps, fillData_weekdays$interval), mean)
-avg_number_steps_interval_weekend = sapply(split(fillData_weekend$steps, fillData_weekend$interval),mean)
+                fillData_weekdays = fillData[fillData$weekday_type == "weekday",]
+                fillData_weekend = fillData[fillData$weekday_type == "weekend",]
+                avg_number_steps_interval_weekdays= sapply(split(fillData_weekdays$steps, fillData_weekdays$interval), mean)
+                avg_number_steps_interval_weekend = sapply(split(fillData_weekend$steps, fillData_weekend$interval),mean)
 ```
 - **Make** a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
 ```
-MyPlot = function() {`
-par(mfrow = c(2, 1), mar = c(4, 5, 2, 2)
-plot(avg_number_steps_interval_weekend, col= "violetred2", type = "l",
-yaxt = "n", ylim = c(0, 250),
-xlim = c(0, 300),
-main = "weekend", ylab = "", xlab = "Interval", col.lab="violetred2",
-col.main="violetred2")
-axis(side = 2, at = seq(0, 250, 50), labels = seq(0, 250, 50))
-plot(avg_number_steps_interval_weekdays, col="darkorchid4", type = "l", ylim = c(0, 250), xlim = c(0, 300), main = "weekday", ylab = "", xlab = "Interval", col.main="darkorchid4", col.lab="darkorchid4")
-par(mfrow = c(1, 1), mar = c(3, 2, 2, 2))
-mtext(text = "Number of steps", side = 2, col="blue")
-par(mar = c(5, 5, 5, 2))
-}
+                MyPlot = function() {`
+                                par(mfrow = c(2, 1), mar = c(4, 5, 2, 2)
+                                plot(avg_number_steps_interval_weekend, col= "violetred2", type = "l",
+                                yaxt = "n", ylim = c(0, 250),
+                                xlim = c(0, 300),
+                                main = "weekend", ylab = "", xlab = "Interval", col.lab="violetred2",
+                                col.main="violetred2")
+                                axis(side = 2, at = seq(0, 250, 50), labels = seq(0, 250, 50))
+                                plot(avg_number_steps_interval_weekdays, col="darkorchid4", type = "l", ylim = c(0, 250),                                    xlim = c(0, 300), main = "weekday", ylab = "", xlab = "Interval", col.main="darkorchid4",                                    col.lab="darkorchid4")
+                                par(mfrow = c(1, 1), mar = c(3, 2, 2, 2))
+                                mtext(text = "Number of steps", side = 2, col="blue")
+                                par(mar = c(5, 5, 5, 2))
+                }
 ```
 
 ```
-MyPlot()
+                MyPlot()
 ```
 
 ![](http://i.imgur.com/vhrmHm9.png)
