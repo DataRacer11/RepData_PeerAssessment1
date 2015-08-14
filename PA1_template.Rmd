@@ -157,7 +157,7 @@ objects of class "Date" representing calendar dates.
 - **Calculate** the total number of steps per day
 
 ```
-Steps_Each_Day = sapply(split(data$steps, data$date), sum)
+                Steps_Each_Day = sapply(split(data$steps, data$date), sum)
 ```
 
 #### Observe the Data: 
@@ -360,7 +360,7 @@ weekends as seen in the final plots included in this analysis.
 ```
                 fillData$weekday = weekdays(as.Date(fillData$date, format = "%Y-%m-d"))
                 fillData$weekday_type = factor(ifelse(fillData$weekday == "Sunday"
-|               fillData$weekday == "Saturday", "weekend", "weekday"),
+                | fillData$weekday == "Saturday", "weekend", "weekday"),
                 levels = c("weekday", "weekend"))
 ```
 - **Calculate** the average number of steps per interval, group by weekday and by weekend day
